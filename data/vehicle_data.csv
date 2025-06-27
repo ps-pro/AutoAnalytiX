@@ -1,0 +1,12 @@
+id,datasource,tank_capacity,rated_mpg
+vehicle_1,source_1,18,35
+vehicle_2,source_1,15.8,32
+vehicle_3,source_2,15.8,24
+vehicle_4,source_1,13,32
+vehicle_5,source_2,23,22
+vehicle_6,source_2,19,56
+vehicle_7,source_2,23,21
+vehicle_8,source_2,18.5,21
+vehicle_9,source_1,17.9,24
+vehicle_10,source_2,26,21
+vehicle_11,source_1,18,35

@@ -1,0 +1,1 @@
+# Moving averages, statistical functions
