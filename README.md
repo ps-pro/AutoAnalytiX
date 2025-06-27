@@ -1,8 +1,7 @@
-# 🚛 AutoAnalytiX - Advanced Fleet Analytics Platform
+# AutoAnalyti𝕏  - Advance Fleet Analytics Platform
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ps-research/AutoAnalytiX/graphs/commit-activity)
 
 > **Enterprise-grade fleet analytics solution for telematics data analysis, fuel theft detection, and fleet utilization optimization.**
 
@@ -325,7 +324,7 @@ A: Place your telemetry data in the `data/` directory as specified
 A: Check that matplotlib backend is set correctly (handled automatically)
 
 ### Getting Help
-- 📧 **Email:** [support@autoanalytix.com](mailto:priyansh.research@gmail.com)
+- 📧 **Email:** [priyansh.research@gmail.com](mailto:priyansh.research@gmail.com)
 - 🐛 **Issues:** [GitHub Issues](https://github.com/ps-research/AutoAnalytiX/issues)
 - 📖 **Documentation:** [Project Wiki](https://github.com/ps-research/AutoAnalytiX/wiki)
 
