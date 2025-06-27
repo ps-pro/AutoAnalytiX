@@ -13,7 +13,6 @@ virtualenv/
 
 # Runtime outputs
 /outputs/
-/reports/
 
 # IDE
 .vscode/
