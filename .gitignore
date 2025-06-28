@@ -10,6 +10,7 @@ __pycache__/
 .venv
 venv/
 virtualenv/
+autoanalytix_venv/
 
 # Runtime outputs
 /outputs/
