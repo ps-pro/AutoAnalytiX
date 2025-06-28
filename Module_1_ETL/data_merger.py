@@ -64,7 +64,7 @@ class DataMerger:
                     merge_stats['meters_merged'] += 1
 
         # Log merge statistics
-        self.logger.info(f"✅ Stream Merge Completed:")
+        self.logger.info(f"[OK] Stream Merge Completed:")
         self.logger.info(f"   • Vehicles processed: {merge_stats['vehicles_processed']}")
         self.logger.info(f"   • Meter datasets merged: {merge_stats['meters_merged']}")
         self.logger.info(f"   • Duplicate records removed: {merge_stats['duplicates_removed']:,}")

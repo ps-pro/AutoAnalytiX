@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from dateutil import parser
-from typing import Union, Optional, Tuple, List, Any
+from typing import Union, Optional, Tuple, List, Any, Dict
 
 
 class DataValidator:

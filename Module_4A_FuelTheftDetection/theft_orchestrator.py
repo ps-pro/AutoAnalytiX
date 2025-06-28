@@ -10,10 +10,10 @@ from pathlib import Path
 from collections import defaultdict
 from tqdm import tqdm
 from shared.data_export import DataExporter
-from time_synchronizer import TimeSynchronizer
-from mpg_calculator import MPGCalculator
-from theft_detector import TheftDetector
-from theft_plotter import TheftPlotter
+from .time_synchronizer import TimeSynchronizer
+from .mpg_calculator import MPGCalculator
+from .theft_detector import TheftDetector
+from .theft_plotter import TheftPlotter
 
 
 class FUEL_THEFT_DETECTION_MODULE:
@@ -145,7 +145,7 @@ class FUEL_THEFT_DETECTION_MODULE:
                 self.logger.info(f"🚨 {vehicle_id}: {len(theft_events)} theft events detected, "
                                f"${vehicle_loss:.2f} estimated loss")
             else:
-                self.logger.debug(f"✅ {vehicle_id}: No theft events detected")
+                self.logger.debug(f"[OK] {vehicle_id}: No theft events detected")
 
             # Export synchronized data
             self.export_synchronized_data(vehicle_id, sync_data)
@@ -154,7 +154,7 @@ class FUEL_THEFT_DETECTION_MODULE:
             self.theft_plotter.plot_theft_analysis(vehicle_id, mpg_data, theft_events)
 
         # Generate comprehensive theft detection summary
-        self.logger.info("✅ Fuel Theft Detection Analysis Completed")
+        self.logger.info("[OK] Fuel Theft Detection Analysis Completed")
         self.logger.info(f"🚨 Theft Detection Summary:")
         self.logger.info(f"   • Vehicles analyzed: {theft_summary['vehicles_analyzed']}")
         self.logger.info(f"   • Vehicles with theft events: {theft_summary['vehicles_with_theft_events']}")

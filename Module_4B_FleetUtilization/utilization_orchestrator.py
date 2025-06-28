@@ -10,11 +10,11 @@ from pathlib import Path
 from collections import defaultdict
 from tqdm import tqdm
 from shared.data_export import DataExporter
-from idle_detector import IdleDetector
-from cost_calculator import CostCalculator
-from utilization_metrics import UtilizationMetrics
-from savings_projector import SavingsProjector
-from utilization_plotter import UtilizationPlotter
+from .idle_detector import IdleDetector
+from .cost_calculator import CostCalculator
+from .utilization_metrics import UtilizationMetrics
+from .savings_projector import SavingsProjector
+from .utilization_plotter import UtilizationPlotter
 
 
 class FLEET_UTILIZATION_MODULE:
@@ -152,7 +152,7 @@ class FLEET_UTILIZATION_MODULE:
             utilization_summary['fleet_average_utilization'] = sum(utilization_scores) / len(utilization_scores)
 
         # Generate comprehensive utilization summary
-        self.logger.info("✅ Fleet Utilization Analysis Completed")
+        self.logger.info("[OK] Fleet Utilization Analysis Completed")
         self.logger.info(f"💰 Utilization Summary:")
         self.logger.info(f"   • Vehicles analyzed: {utilization_summary['vehicles_analyzed']}")
         self.logger.info(f"   • Total idle hours: {utilization_summary['total_idle_hours']:.1f}")

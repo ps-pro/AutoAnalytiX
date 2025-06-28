@@ -67,12 +67,12 @@ class AutoAnalytiXSetup:
         print("🔍 Checking Python version...")
         
         if sys.version_info < (3, 8):
-            print("❌ ERROR: Python 3.8 or higher is required!")
+            print("[ERROR] ERROR: Python 3.8 or higher is required!")
             print(f"   Current version: {sys.version}")
             print("   Please upgrade Python and try again.")
             sys.exit(1)
         
-        print(f"✅ Python version OK: {sys.version.split()[0]}")
+        print(f"[OK] Python version OK: {sys.version.split()[0]}")
 
     def check_required_files(self):
         """Check if required files exist"""
@@ -91,13 +91,13 @@ class AutoAnalytiXSetup:
                 missing_files.append(str(file_path))
         
         if missing_files:
-            print("❌ ERROR: Missing required files:")
+            print("[ERROR] ERROR: Missing required files:")
             for file in missing_files:
                 print(f"   - {file}")
             print("   Please ensure all AutoAnalytiX files are present.")
             sys.exit(1)
         
-        print("✅ All required files found")
+        print("[OK] All required files found")
 
     def create_virtual_environment(self):
         """Create virtual environment"""
@@ -119,11 +119,11 @@ class AutoAnalytiXSetup:
                 self.python_executable, "-m", "venv", str(self.venv_path)
             ], check=True, capture_output=True, text=True)
             
-            print("✅ Virtual environment created successfully")
+            print("[OK] Virtual environment created successfully")
             return True
             
         except subprocess.CalledProcessError as e:
-            print(f"❌ ERROR: Failed to create virtual environment")
+            print(f"[ERROR] ERROR: Failed to create virtual environment")
             print(f"   Command: {' '.join(e.cmd)}")
             print(f"   Error: {e.stderr}")
             return False
@@ -133,7 +133,7 @@ class AutoAnalytiXSetup:
         print("📦 Installing dependencies...")
         
         if not self.venv_pip.exists():
-            print(f"❌ ERROR: Pip not found in virtual environment: {self.venv_pip}")
+            print(f"[ERROR] ERROR: Pip not found in virtual environment: {self.venv_pip}")
             return False
         
         try:
@@ -149,7 +149,7 @@ class AutoAnalytiXSetup:
                 str(self.venv_pip), "install", "-r", str(self.requirements_file)
             ], check=True, capture_output=True, text=True)
             
-            print("✅ Dependencies installed successfully")
+            print("[OK] Dependencies installed successfully")
             
             # Show installed packages
             print("📋 Installed packages:")
@@ -164,7 +164,7 @@ class AutoAnalytiXSetup:
             return True
             
         except subprocess.CalledProcessError as e:
-            print(f"❌ ERROR: Failed to install dependencies")
+            print(f"[ERROR] ERROR: Failed to install dependencies")
             print(f"   Command: {' '.join(e.cmd)}")
             print(f"   Error: {e.stderr}")
             return False
@@ -188,10 +188,10 @@ class AutoAnalytiXSetup:
                 f.write("- vehicle_data.csv\n\n")
                 f.write("Or the system will look for Google Colab mounted drive.\n")
             
-            print(f"✅ Data directory created: {data_dir}")
+            print(f"[OK] Data directory created: {data_dir}")
             print("   ℹ️  Place your CSV files in the data/ directory")
         else:
-            print("✅ Data directory exists")
+            print("[OK] Data directory exists")
 
     def run_autoanalytix(self):
         """Run the AutoAnalytiX main application"""
@@ -210,15 +210,15 @@ class AutoAnalytiXSetup:
             print("=" * 60)
             
             if result.returncode == 0:
-                print("✅ AutoAnalytiX analysis completed successfully!")
+                print("[OK] AutoAnalytiX analysis completed successfully!")
                 print("📁 Check the AutoAnalytiX__Reports directory for results")
                 return True
             else:
-                print(f"❌ AutoAnalytiX analysis failed with exit code: {result.returncode}")
+                print(f"[ERROR] AutoAnalytiX analysis failed with exit code: {result.returncode}")
                 return False
                 
         except Exception as e:
-            print(f"❌ ERROR: Failed to run AutoAnalytiX")
+            print(f"[ERROR] ERROR: Failed to run AutoAnalytiX")
             print(f"   Error: {str(e)}")
             return False
 
@@ -310,7 +310,7 @@ class AutoAnalytiXSetup:
             print("\n\n⚠️  Setup interrupted by user")
             return False
         except Exception as e:
-            print(f"\n❌ SETUP FAILED: {str(e)}")
+            print(f"\n[ERROR] SETUP FAILED: {str(e)}")
             import traceback
             traceback.print_exc()
             return False

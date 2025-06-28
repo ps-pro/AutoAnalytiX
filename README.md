@@ -42,10 +42,10 @@ python setup.py
 ```
 
 That's it! This single command will:
-1. ✅ Create a virtual environment
-2. ✅ Install all dependencies  
-3. ✅ Run the complete analysis
-4. ✅ Generate comprehensive reports
+1. [OK] Create a virtual environment
+2. [OK] Install all dependencies  
+3. [OK] Run the complete analysis
+4. [OK] Generate comprehensive reports
 
 ### Manual Setup (Alternative)
 

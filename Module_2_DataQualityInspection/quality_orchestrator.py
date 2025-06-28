@@ -8,12 +8,12 @@ Orchestrates comprehensive data quality inspection across all vehicles.
 from pathlib import Path
 from collections import defaultdict
 from tqdm import tqdm
-from speed_analyzer import SpeedAnalyzer
-from odometer_analyzer import OdometerAnalyzer
-from fuel_analyzer import FuelAnalyzer
-from speed_plotter import SpeedPlotter
-from odometer_plotter import OdometerPlotter
-from fuel_plotter import FuelPlotter
+from .speed_analyzer import SpeedAnalyzer
+from .odometer_analyzer import OdometerAnalyzer
+from .fuel_analyzer import FuelAnalyzer
+from .speed_plotter import SpeedPlotter
+from .odometer_plotter import OdometerPlotter
+from .fuel_plotter import FuelPlotter
 
 
 class DATAQUALITYINSPECTION_MODULE:
@@ -111,7 +111,7 @@ class DATAQUALITYINSPECTION_MODULE:
                 inspection_summary['quality_issues_detected'] += 1
 
         # Generate comprehensive inspection summary
-        self.logger.info("✅ Data Quality Inspection Completed")
+        self.logger.info("[OK] Data Quality Inspection Completed")
         self.logger.info(f"📊 Inspection Summary:")
         self.logger.info(f"   • Vehicles processed: {inspection_summary['vehicles_processed']}")
         self.logger.info(f"   • Speed analyses: {inspection_summary['speed_analyses']}")

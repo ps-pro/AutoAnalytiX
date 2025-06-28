@@ -47,9 +47,9 @@ VEH003,55,9.1
 - **rated_mpg**: Manufacturer's rated MPG
 
 ### Data Quality Notes
-- ✅ Missing values are handled automatically
-- ✅ Timestamps are parsed flexibly
-- ✅ Duplicate records are removed during processing
+- [OK] Missing values are handled automatically
+- [OK] Timestamps are parsed flexibly
+- [OK] Duplicate records are removed during processing
 - ⚠️ Invalid fuel levels (<0% or >100%) will be flagged and cleaned
 
 ## 🚀 Quick Start

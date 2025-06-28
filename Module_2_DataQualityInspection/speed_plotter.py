@@ -83,6 +83,6 @@ class SpeedPlotter:
             self.logger.verify_plot_creation(plot_path, f"{vehicle_id} Speed Analysis")
 
         except Exception as e:
-            self.logger.error(f"❌ Failed to create speed plot for {vehicle_id}: {e}")
+            self.logger.error(f"[ERROR] Failed to create speed plot for {vehicle_id}: {e}")
             self.logger.error(f"Traceback: {traceback.format_exc()}")
             plt.close('all')  # Ensure cleanup

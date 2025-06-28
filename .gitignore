@@ -15,6 +15,9 @@ autoanalytix_venv/
 # Runtime outputs
 /outputs/
 
+#Reports
+AutoAnalytiX__Reports/
+
 # IDE
 .vscode/
 .idea/

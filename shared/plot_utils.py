@@ -97,7 +97,7 @@ class PlotManager:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Failed to save plot {plot_name}: {e}")
+                self.logger.error(f"[ERROR] Failed to save plot {plot_name}: {e}")
                 self.logger.error(f"Traceback: {traceback.format_exc()}")
             plt.close('all')  # Ensure cleanup
             return False
@@ -118,18 +118,18 @@ class PlotManager:
                 size = plot_path.stat().st_size
                 if size > 1000:  # Reasonable minimum size for a plot
                     if self.logger:
-                        self.logger.info(f"✅ Plot saved: {plot_name} ({size} bytes)")
+                        self.logger.info(f"[OK] Plot saved: {plot_name} ({size} bytes)")
                     return True
                 else:
                     if self.logger:
-                        self.logger.error(f"❌ Plot file too small: {plot_name} ({size} bytes)")
+                        self.logger.error(f"[ERROR] Plot file too small: {plot_name} ({size} bytes)")
             else:
                 if self.logger:
-                    self.logger.error(f"❌ Plot NOT created: {plot_name}")
+                    self.logger.error(f"[ERROR] Plot NOT created: {plot_name}")
             return False
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Error verifying plot {plot_name}: {e}")
+                self.logger.error(f"[ERROR] Error verifying plot {plot_name}: {e}")
             return False
     
     def _track_plot_created(self, plot_path: Path, plot_name: str):
@@ -162,7 +162,7 @@ class PlotManager:
             return fig, axes
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Failed to create figure: {e}")
+                self.logger.error(f"[ERROR] Failed to create figure: {e}")
             return None, None
     
     def setup_axis(
@@ -197,7 +197,7 @@ class PlotManager:
                 
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Failed to setup axis: {e}")
+                self.logger.error(f"[ERROR] Failed to setup axis: {e}")
     
     def add_value_labels_to_bars(self, ax, bars, values, format_string: str = "{:.0f}"):
         """
@@ -222,7 +222,7 @@ class PlotManager:
                 )
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Failed to add value labels: {e}")
+                self.logger.error(f"[ERROR] Failed to add value labels: {e}")
     
     def create_color_map(self, categories: list, palette: str = "husl") -> Dict[str, str]:
         """
@@ -240,7 +240,7 @@ class PlotManager:
             return dict(zip(categories, colors))
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Failed to create color map: {e}")
+                self.logger.error(f"[ERROR] Failed to create color map: {e}")
             return {}
     
     def cleanup_plots(self):
@@ -249,7 +249,7 @@ class PlotManager:
             plt.close('all')
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Failed to cleanup plots: {e}")
+                self.logger.error(f"[ERROR] Failed to cleanup plots: {e}")
     
     def create_standard_threat_colors(self) -> Dict[str, str]:
         """Create standard color mapping for threat levels."""
@@ -310,7 +310,7 @@ class PlotManager:
             return True
         except Exception as e:
             if self.logger:
-                self.logger.error(f"❌ Plot execution failed: {e}")
+                self.logger.error(f"[ERROR] Plot execution failed: {e}")
                 self.logger.error(f"Traceback: {traceback.format_exc()}")
             self.cleanup_plots()
             return False
