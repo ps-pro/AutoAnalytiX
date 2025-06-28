@@ -10,10 +10,10 @@ from pathlib import Path
 from collections import defaultdict
 from tqdm import tqdm
 from shared.data_export import DataExporter
-from .time_synchronizer import TimeSynchronizer
-from .mpg_calculator import MPGCalculator
-from .theft_detector import TheftDetector
-from .theft_plotter import TheftPlotter
+from time_synchronizer import TimeSynchronizer
+from mpg_calculator import MPGCalculator
+from theft_detector import TheftDetector
+from theft_plotter import TheftPlotter
 
 
 class FUEL_THEFT_DETECTION_MODULE:

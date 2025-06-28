@@ -14,22 +14,26 @@ import sys
 from pathlib import Path
 
 # Add module directories to Python path
-sys.path.insert(0, str(Path("Module-1_ETL")))
-sys.path.insert(0, str(Path("Module-2_DataQualityInspection")))
-sys.path.insert(0, str(Path("Module-3_DataQualityAssurance")))
-sys.path.insert(0, str(Path("Module-4A_FuelTheftDetection")))
-sys.path.insert(0, str(Path("Module-4B_FleetUtilization")))
+current_dir = Path(__file__).parent
+sys.path.insert(0, str(current_dir / "core"))
+sys.path.insert(0, str(current_dir / "shared"))
+sys.path.insert(0, str(current_dir / "reports"))
+sys.path.insert(0, str(current_dir / "Module-1_ETL"))
+sys.path.insert(0, str(current_dir / "Module-2_DataQualityInspection"))
+sys.path.insert(0, str(current_dir / "Module-3_DataQualityAssurance"))
+sys.path.insert(0, str(current_dir / "Module-4A_FuelTheftDetection"))
+sys.path.insert(0, str(current_dir / "Module-4B_FleetUtilization"))
 
 # Import core modules
 from core.logger import ProfessionalLogger
 from reports.executive_summary import generate_executive_summary
 
 # Import module orchestrators
-from etl_orchestrator import ETL_MODULE
-from quality_orchestrator import DATAQUALITYINSPECTION_MODULE
-from cleaning_orchestrator import DATAQUALITYASSURANCE_MODULE
-from theft_orchestrator import FUEL_THEFT_DETECTION_MODULE
-from utilization_orchestrator import FLEET_UTILIZATION_MODULE
+from Module_1_ETL.etl_orchestrator import ETL_MODULE
+from Module_2_DataQualityInspection.quality_orchestrator import DATAQUALITYINSPECTION_MODULE
+from Module_3_DataQualityAssurance.cleaning_orchestrator import DATAQUALITYASSURANCE_MODULE
+from Module_4A_FuelTheftDetection.theft_orchestrator import FUEL_THEFT_DETECTION_MODULE
+from Module_4B_FleetUtilization.utilization_orchestrator import FLEET_UTILIZATION_MODULE
 
 
 def main():

@@ -6,11 +6,11 @@ Orchestrates the complete ETL pipeline with comprehensive logging.
 """
 
 from datetime import datetime
-from .data_loader import DataLoader
-from .timestamp_processor import TimestampProcessor
-from .stream1_extractor import Stream1Extractor
-from .stream2_extractor import Stream2Extractor
-from .data_merger import DataMerger
+from data_loader import DataLoader
+from timestamp_processor import TimestampProcessor
+from stream1_extractor import Stream1Extractor
+from stream2_extractor import Stream2Extractor
+from data_merger import DataMerger
 
 
 class ETL_MODULE:

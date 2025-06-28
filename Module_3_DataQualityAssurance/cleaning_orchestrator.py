@@ -11,10 +11,10 @@ from collections import defaultdict
 from tqdm import tqdm
 from datetime import datetime
 from shared.data_export import DataExporter
-from .speed_cleaner import SpeedCleaner
-from .odometer_cleaner import OdometerCleaner
-from .fuel_cleaner import FuelCleaner
-from .quality_reporter import QualityReporter
+from speed_cleaner import SpeedCleaner
+from odometer_cleaner import OdometerCleaner
+from fuel_cleaner import FuelCleaner
+from quality_reporter import QualityReporter
 
 
 class DATAQUALITYASSURANCE_MODULE:

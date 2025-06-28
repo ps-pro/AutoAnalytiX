@@ -5,3 +5,5 @@ seaborn>=0.11.0
 scipy>=1.9.0
 python-dateutil>=2.8.0
 tqdm>=4.64.0
+pathlib2>=2.3.7
+collections-extended>=2.0.2

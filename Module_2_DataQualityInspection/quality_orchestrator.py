@@ -8,12 +8,12 @@ Orchestrates comprehensive data quality inspection across all vehicles.
 from pathlib import Path
 from collections import defaultdict
 from tqdm import tqdm
-from .speed_analyzer import SpeedAnalyzer
-from .odometer_analyzer import OdometerAnalyzer
-from .fuel_analyzer import FuelAnalyzer
-from .speed_plotter import SpeedPlotter
-from .odometer_plotter import OdometerPlotter
-from .fuel_plotter import FuelPlotter
+from speed_analyzer import SpeedAnalyzer
+from odometer_analyzer import OdometerAnalyzer
+from fuel_analyzer import FuelAnalyzer
+from speed_plotter import SpeedPlotter
+from odometer_plotter import OdometerPlotter
+from fuel_plotter import FuelPlotter
 
 
 class DATAQUALITYINSPECTION_MODULE:

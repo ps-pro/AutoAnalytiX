@@ -10,11 +10,11 @@ from pathlib import Path
 from collections import defaultdict
 from tqdm import tqdm
 from shared.data_export import DataExporter
-from .idle_detector import IdleDetector
-from .cost_calculator import CostCalculator
-from .utilization_metrics import UtilizationMetrics
-from .savings_projector import SavingsProjector
-from .utilization_plotter import UtilizationPlotter
+from idle_detector import IdleDetector
+from cost_calculator import CostCalculator
+from utilization_metrics import UtilizationMetrics
+from savings_projector import SavingsProjector
+from utilization_plotter import UtilizationPlotter
 
 
 class FLEET_UTILIZATION_MODULE:
