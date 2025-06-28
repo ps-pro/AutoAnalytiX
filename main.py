@@ -93,7 +93,7 @@ def main():
         # Generate summary of all files created
         logger.generate_files_summary()
 
-        logger.info(f"📄 TOTAL FILES CREATED: {len(logger.files_created)}")
+        logger.info(f"[REPORT] TOTAL FILES CREATED: {len(logger.files_created)}")
 
         logger.info("🎉 AutoAnalytiX - ALL MODULES COMPLETED SUCCESSFULLY!")
         logger.info("📁 Comprehensive reports saved to AutoAnalytiX__Reports directory")

@@ -142,7 +142,7 @@ class FUEL_THEFT_DETECTION_MODULE:
                 # Export theft events
                 self.export_theft_events(vehicle_id, theft_events)
 
-                self.logger.info(f"🚨 {vehicle_id}: {len(theft_events)} theft events detected, "
+                self.logger.info(f"[ALERT] {vehicle_id}: {len(theft_events)} theft events detected, "
                                f"${vehicle_loss:.2f} estimated loss")
             else:
                 self.logger.debug(f"[OK] {vehicle_id}: No theft events detected")
@@ -155,7 +155,7 @@ class FUEL_THEFT_DETECTION_MODULE:
 
         # Generate comprehensive theft detection summary
         self.logger.info("[OK] Fuel Theft Detection Analysis Completed")
-        self.logger.info(f"🚨 Theft Detection Summary:")
+        self.logger.info(f"[ALERT] Theft Detection Summary:")
         self.logger.info(f"   • Vehicles analyzed: {theft_summary['vehicles_analyzed']}")
         self.logger.info(f"   • Vehicles with theft events: {theft_summary['vehicles_with_theft_events']}")
         self.logger.info(f"   • Total theft events: {theft_summary['total_theft_events']}")

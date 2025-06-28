@@ -101,7 +101,7 @@ class AutoAnalytiXSetup:
 
     def create_virtual_environment(self):
         """Create virtual environment"""
-        print(f"🔧 Creating virtual environment: {self.venv_name}")
+        print(f" Creating virtual environment: {self.venv_name}")
         
         if self.venv_path.exists():
             print(f"⚠️  Virtual environment already exists at {self.venv_path}")
@@ -236,7 +236,7 @@ class AutoAnalytiXSetup:
             subdirs = [
                 ("Plots", "📈"),
                 ("Data_Exports", "📋"),
-                ("Theft_Detection", "🚨"),
+                ("Theft_Detection", "[ALERT]"),
                 ("Utilization_Analysis", "💰"),
                 ("Logs", "📝")
             ]
@@ -264,7 +264,7 @@ class AutoAnalytiXSetup:
         print("1. 📁 Review results in AutoAnalytiX__Reports/")
         print("2. 📈 Check plots in AutoAnalytiX__Reports/Plots/")
         print("3. 📋 Read Executive_Summary.txt for key findings")
-        print("4. 🚨 Review theft events in Theft_Detection/")
+        print("4. [ALERT] Review theft events in Theft_Detection/")
         print("5. 💰 Check utilization costs in Utilization_Analysis/")
         
         if self.is_windows:
@@ -272,7 +272,7 @@ class AutoAnalytiXSetup:
         else:
             activate_cmd = f"source {self.venv_path}/bin/activate"
         
-        print(f"\n🔧 To manually run in the future:")
+        print(f"\n To manually run in the future:")
         print(f"   {activate_cmd}")
         print(f"   python main.py")
         print(f"\n🚀 Or run the complete setup again:")

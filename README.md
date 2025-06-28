@@ -1,7 +1,8 @@
-# AutoAnalyti𝕏  - Advance Fleet Analytics Platform
+# 🚛 AutoAnalytiX - Advanced Fleet Analytics Platform
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ps-research/AutoAnalytiX/graphs/commit-activity)
 
 > **Enterprise-grade fleet analytics solution for telematics data analysis, fuel theft detection, and fleet utilization optimization.**
 
@@ -42,10 +43,10 @@ python setup.py
 ```
 
 That's it! This single command will:
-1. [OK] Create a virtual environment
-2. [OK] Install all dependencies  
-3. [OK] Run the complete analysis
-4. [OK] Generate comprehensive reports
+1. ✅ Create a virtual environment
+2. ✅ Install all dependencies  
+3. ✅ Run the complete analysis
+4. ✅ Generate comprehensive reports
 
 ### Manual Setup (Alternative)
 

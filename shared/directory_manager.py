@@ -271,7 +271,7 @@ class DirectoryManager:
             self.track_file_created(output_path, "Files Summary Report")
             
             if self.logger:
-                self.logger.info(f"📄 Files summary report created: {output_path}")
+                self.logger.info(f"[REPORT] Files summary report created: {output_path}")
                 
             return True
             

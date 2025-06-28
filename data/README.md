@@ -47,9 +47,9 @@ VEH003,55,9.1
 - **rated_mpg**: Manufacturer's rated MPG
 
 ### Data Quality Notes
-- [OK] Missing values are handled automatically
-- [OK] Timestamps are parsed flexibly
-- [OK] Duplicate records are removed during processing
+- ✅ Missing values are handled automatically
+- ✅ Timestamps are parsed flexibly
+- ✅ Duplicate records are removed during processing
 - ⚠️ Invalid fuel levels (<0% or >100%) will be flagged and cleaned
 
 ## 🚀 Quick Start
@@ -58,10 +58,6 @@ VEH003,55,9.1
 2. **Ensure file names match** exactly: `telemetry_1.csv`, `telemetry_2.csv`, `vehicle_data.csv`
 3. **Run analysis**: `python setup.py` from project root
 
-## 🔍 Alternative Data Sources
-
-If CSV files are not found here, AutoAnalytiX will automatically look for:
-- Google Colab mounted drive at `/content/drive/MyDrive/PS/AutoAnalytiX/Telemetry Data/`
 
 ---
 
