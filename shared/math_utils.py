@@ -413,7 +413,7 @@ class MathUtils:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Correlation calculation failed: {e}")
+                self.logger.error(f"❌ Correlation calculation failed: {e}")
             return pd.DataFrame()
     
     def normalize_data(
@@ -466,5 +466,5 @@ class MathUtils:
                 
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Data normalization failed: {e}")
+                self.logger.error(f"❌ Data normalization failed: {e}")
             return data_series

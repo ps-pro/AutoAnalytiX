@@ -52,5 +52,5 @@ class Stream2Extractor:
                         meter_df = meter_df.sort_values('TIMESTAMP').reset_index(drop=True)
                         vehicle_meter_data[vehicle_id][meter_type] = meter_df
 
-        self.logger.info(f"[OK] Stream 2 processed: {len(unique_vehicles)} vehicles")
+        self.logger.info(f"✅ Stream 2 processed: {len(unique_vehicles)} vehicles")
         return dict(vehicle_meter_data)

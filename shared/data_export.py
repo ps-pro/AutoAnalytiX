@@ -61,13 +61,13 @@ class DataExporter:
             # Log success
             if self.logger:
                 size = file_path.stat().st_size
-                self.logger.info(f"[OK] CSV Export: {file_path} ({size} bytes)")
+                self.logger.info(f"✅ CSV Export: {file_path} ({size} bytes)")
             
             return True
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] CSV Export failed: {file_path} - {e}")
+                self.logger.error(f"❌ CSV Export failed: {file_path} - {e}")
             return False
     
     def export_to_json(
@@ -103,13 +103,13 @@ class DataExporter:
             # Log success
             if self.logger:
                 size = file_path.stat().st_size
-                self.logger.info(f"[OK] JSON Export: {file_path} ({size} bytes)")
+                self.logger.info(f"✅ JSON Export: {file_path} ({size} bytes)")
             
             return True
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] JSON Export failed: {file_path} - {e}")
+                self.logger.error(f"❌ JSON Export failed: {file_path} - {e}")
             return False
     
     def export_raw_data_summary(
@@ -143,7 +143,7 @@ class DataExporter:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Raw data summary export failed: {e}")
+                self.logger.error(f"❌ Raw data summary export failed: {e}")
             return False
     
     def export_cleaned_data(
@@ -181,7 +181,7 @@ class DataExporter:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Cleaned data export failed for {vehicle_id}: {e}")
+                self.logger.error(f"❌ Cleaned data export failed for {vehicle_id}: {e}")
             return False
     
     def export_synchronized_data(
@@ -213,7 +213,7 @@ class DataExporter:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Synchronized data export failed for {vehicle_id}: {e}")
+                self.logger.error(f"❌ Synchronized data export failed for {vehicle_id}: {e}")
             return False
     
     def export_theft_events(
@@ -249,7 +249,7 @@ class DataExporter:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Theft events export failed for {vehicle_id}: {e}")
+                self.logger.error(f"❌ Theft events export failed for {vehicle_id}: {e}")
             return False
     
     def export_utilization_data(
@@ -307,7 +307,7 @@ class DataExporter:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Utilization data export failed for {vehicle_id}: {e}")
+                self.logger.error(f"❌ Utilization data export failed for {vehicle_id}: {e}")
             return False
     
     def _track_export(self, file_path: Path, description: str):
@@ -353,5 +353,5 @@ class DataExporter:
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Export summary generation failed: {e}")
+                self.logger.error(f"❌ Export summary generation failed: {e}")
             return False

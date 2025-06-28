@@ -152,13 +152,13 @@ class DirectoryManager:
                 self.directories_created.append(str(dir_path))
                 
                 if self.logger:
-                    self.logger.info(f"[OK] Created directory: {dir_path}")
+                    self.logger.info(f"✅ Created directory: {dir_path}")
                     
             return True
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Failed to create directory {dir_path}: {e}")
+                self.logger.error(f"❌ Failed to create directory {dir_path}: {e}")
             return False
     
     def track_file_created(self, file_path: Union[str, Path], description: str = None):
@@ -184,9 +184,9 @@ class DirectoryManager:
         if self.logger:
             if file_path.exists():
                 size = file_path.stat().st_size
-                self.logger.info(f"[OK] File created: {file_path} ({size} bytes)")
+                self.logger.info(f"✅ File created: {file_path} ({size} bytes)")
             else:
-                self.logger.error(f"[ERROR] File NOT created: {file_path}")
+                self.logger.error(f"❌ File NOT created: {file_path}")
     
     def verify_file_exists(self, file_path: Union[str, Path]) -> bool:
         """
@@ -209,7 +209,7 @@ class DirectoryManager:
                 
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Error verifying file {file_path}: {e}")
+                self.logger.error(f"❌ Error verifying file {file_path}: {e}")
             return False
     
     def get_files_summary(self) -> Dict[str, any]:
@@ -271,13 +271,13 @@ class DirectoryManager:
             self.track_file_created(output_path, "Files Summary Report")
             
             if self.logger:
-                self.logger.info(f"[REPORT] Files summary report created: {output_path}")
+                self.logger.info(f"📋 Files summary report created: {output_path}")
                 
             return True
             
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Failed to generate files summary: {e}")
+                self.logger.error(f"❌ Failed to generate files summary: {e}")
             return False
     
     def cleanup_empty_directories(self) -> int:
@@ -303,7 +303,7 @@ class DirectoryManager:
                         
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Error during directory cleanup: {e}")
+                self.logger.error(f"❌ Error during directory cleanup: {e}")
         
         return removed_count
     
@@ -333,6 +333,6 @@ class DirectoryManager:
                         
         except Exception as e:
             if self.logger:
-                self.logger.error(f"[ERROR] Error analyzing directory structure: {e}")
+                self.logger.error(f"❌ Error analyzing directory structure: {e}")
         
         return structure

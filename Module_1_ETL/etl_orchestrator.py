@@ -55,7 +55,7 @@ class ETL_MODULE:
                 'processing_timestamp': datetime.now()
             }
 
-            self.logger.info("[OK] ETL Pipeline Completed Successfully")
+            self.logger.info("✅ ETL Pipeline Completed Successfully")
             self.logger.info(f"📊 ETL Summary: {etl_summary['total_vehicles']} vehicles processed")
 
             return {
@@ -65,5 +65,5 @@ class ETL_MODULE:
             }
 
         except Exception as e:
-            self.logger.error(f"[ERROR] ETL Pipeline failed: {e}")
+            self.logger.error(f"❌ ETL Pipeline failed: {e}")
             raise

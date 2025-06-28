@@ -152,7 +152,7 @@ class FLEET_UTILIZATION_MODULE:
             utilization_summary['fleet_average_utilization'] = sum(utilization_scores) / len(utilization_scores)
 
         # Generate comprehensive utilization summary
-        self.logger.info("[OK] Fleet Utilization Analysis Completed")
+        self.logger.info("✅ Fleet Utilization Analysis Completed")
         self.logger.info(f"💰 Utilization Summary:")
         self.logger.info(f"   • Vehicles analyzed: {utilization_summary['vehicles_analyzed']}")
         self.logger.info(f"   • Total idle hours: {utilization_summary['total_idle_hours']:.1f}")

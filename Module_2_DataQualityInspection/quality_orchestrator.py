@@ -111,7 +111,7 @@ class DATAQUALITYINSPECTION_MODULE:
                 inspection_summary['quality_issues_detected'] += 1
 
         # Generate comprehensive inspection summary
-        self.logger.info("[OK] Data Quality Inspection Completed")
+        self.logger.info("✅ Data Quality Inspection Completed")
         self.logger.info(f"📊 Inspection Summary:")
         self.logger.info(f"   • Vehicles processed: {inspection_summary['vehicles_processed']}")
         self.logger.info(f"   • Speed analyses: {inspection_summary['speed_analyses']}")

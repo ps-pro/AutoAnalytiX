@@ -33,7 +33,7 @@ class ProfessionalLogger:
 
         for log_dir in self.log_dirs.values():
             log_dir.mkdir(parents=True, exist_ok=True)
-            print(f"[OK] Created directory: {log_dir}")
+            print(f"✅ Created directory: {log_dir}")
 
         # Setup main system logger
         self._logger = logging.getLogger('AutoAnalytiX')
@@ -70,9 +70,9 @@ class ProfessionalLogger:
         self.files_created.append(str(file_path))
         if Path(file_path).exists():
             size = Path(file_path).stat().st_size
-            self._logger.info(f"[OK] File created: {file_path} ({size} bytes)")
+            self._logger.info(f"✅ File created: {file_path} ({size} bytes)")
         else:
-            self._logger.error(f"[ERROR] File NOT created: {file_path}")
+            self._logger.error(f"❌ File NOT created: {file_path}")
 
     def verify_plot_creation(self, plot_path, plot_name):
         """Verify plot was actually created and has content"""
@@ -80,16 +80,16 @@ class ProfessionalLogger:
             if Path(plot_path).exists():
                 size = Path(plot_path).stat().st_size
                 if size > 1000:  # Reasonable minimum size for a plot
-                    self._logger.info(f"[OK] Plot saved: {plot_name} ({size} bytes)")
+                    self._logger.info(f"✅ Plot saved: {plot_name} ({size} bytes)")
                     self.track_file_created(plot_path)
                     return True
                 else:
-                    self._logger.error(f"[ERROR] Plot file too small: {plot_name} ({size} bytes)")
+                    self._logger.error(f"❌ Plot file too small: {plot_name} ({size} bytes)")
             else:
-                self._logger.error(f"[ERROR] Plot NOT created: {plot_name}")
+                self._logger.error(f"❌ Plot NOT created: {plot_name}")
             return False
         except Exception as e:
-            self._logger.error(f"[ERROR] Error verifying plot {plot_name}: {e}")
+            self._logger.error(f"❌ Error verifying plot {plot_name}: {e}")
             return False
 
     # Add wrapper methods to expose internal logger methods
@@ -118,7 +118,7 @@ class ProfessionalLogger:
         try:
             with open(vehicle_log_path, 'a', encoding='utf-8') as f:
                 f.write(f"\n{'='*80}\n")
-                f.write(f"[ALERT] {violation_type.upper()} VIOLATION DETECTED\n")
+                f.write(f"🚨 {violation_type.upper()} VIOLATION DETECTED\n")
                 f.write(f"Vehicle ID: {vehicle_id}\n")
                 f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write(f"{'='*80}\n")
@@ -162,6 +162,6 @@ class ProfessionalLogger:
                     else:
                         f.write(f"{i:3d}. {file_path} (NOT FOUND)\n")
 
-            self._logger.info(f"[REPORT] Files summary created: {summary_path}")
+            self._logger.info(f"📋 Files summary created: {summary_path}")
         except Exception as e:
             self._logger.error(f"Failed to create files summary: {e}")

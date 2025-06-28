@@ -48,5 +48,5 @@ class Stream1Extractor:
                 fuel_data = vehicle_data.loc[fuel_mask, ['TIMESTAMP', 'fuel_level']].reset_index(drop=True)
                 vehicle_meter_data[vehicle_id]['fuel'] = fuel_data
 
-        self.logger.info(f"[OK] Stream 1 processed: {len(unique_vehicles)} vehicles")
+        self.logger.info(f"✅ Stream 1 processed: {len(unique_vehicles)} vehicles")
         return dict(vehicle_meter_data)

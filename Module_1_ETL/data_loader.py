@@ -42,7 +42,7 @@ class DataLoader:
                     raise FileNotFoundError(f"Required file not found: {file_path}")
 
                 datasets[dataset_name] = pd.read_csv(file_path)
-                self.logger.info(f"[OK] Loaded {dataset_name}: {datasets[dataset_name].shape[0]:,} records")
+                self.logger.info(f"✅ Loaded {dataset_name}: {datasets[dataset_name].shape[0]:,} records")
 
             # Export raw data summary
             self.export_raw_data_summary(datasets)
@@ -63,7 +63,7 @@ class DataLoader:
             return datasets
 
         except Exception as e:
-            self.logger.error(f"[ERROR] Error loading data: {e}")
+            self.logger.error(f"❌ Error loading data: {e}")
             raise
 
     def export_raw_data_summary(self, datasets):

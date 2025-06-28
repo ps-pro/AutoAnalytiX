@@ -136,7 +136,7 @@ class DATAQUALITYASSURANCE_MODULE:
         total_initial_fleet = fleet_cleaning_summary['total_records_retained'] + fleet_cleaning_summary['total_records_cleaned']
         fleet_retention_rate = fleet_cleaning_summary['total_records_retained'] / total_initial_fleet * 100 if total_initial_fleet > 0 else 0
 
-        self.logger.info("[OK] Data Quality Assurance Completed")
+        self.logger.info("✅ Data Quality Assurance Completed")
         self.logger.info(f"📊 Fleet Cleaning Summary:")
         self.logger.info(f"   • Vehicles processed: {fleet_cleaning_summary['vehicles_processed']}")
         self.logger.info(f"   • Records cleaned: {fleet_cleaning_summary['total_records_cleaned']:,}")
