@@ -25,3 +25,6 @@ AutoAnalytiX__Reports/
 # OS
 .DS_Store
 Thumbs.db
+
+#Personal files
+code_counter.py
