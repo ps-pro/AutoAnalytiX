@@ -12,13 +12,7 @@ __author__ = "AutoAnalytiX Team"
 
 # Import key classes and functions for easy access
 from .data_export import DataExporter
-from .plot_utils import PlotManager
-from .directory_manager import DirectoryManager
-from .math_utils import MathUtils
 
 __all__ = [
-    'DataExporter',
-    'PlotManager', 
-    'DirectoryManager',
-    'MathUtils'
+    'DataExporter'
 ]
